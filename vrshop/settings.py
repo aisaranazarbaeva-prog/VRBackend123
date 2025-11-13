@@ -3,7 +3,6 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,17 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'drf_spectacular',
     'django_filters',
     'corsheaders',
-
 
     'users',
     'products',
     'orders',
-    'about_us',
-    'gallery',
-    'catalog',
 ]
 
 MIDDLEWARE = [
@@ -118,9 +112,6 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-
-    # Добавляем DRF Spectacular
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # JWT настройки
@@ -131,4 +122,3 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'users.User'
-
